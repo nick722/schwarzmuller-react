@@ -1,17 +1,11 @@
 import React from 'react';
-import Radium from 'radium';
 
 import './Person.css';
 
 const Person = ({name, age, children, click, change}) => {
-    const style = {
-        '@media (min-width: 500px)': {
-            width: '450px'
-        }
-    };
 
     return (
-    <div className="Person" style={style}>
+    <div className="Person">
         <p onClick={click}>I'm {name} and I am {age} years old!</p>
         <p>{children}</p>
         <input
@@ -22,4 +16,4 @@ const Person = ({name, age, children, click, change}) => {
     </div>
 )}
 
-export default Radium(Person);
+export default Person;
