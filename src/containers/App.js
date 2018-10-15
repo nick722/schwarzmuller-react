@@ -1,10 +1,20 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
 import './App.css';
 import Persons from '../components/Persons';
 import Cockpit from '../components/Cockpit';
 
-class App extends Component {
+class App extends PureComponent {
+
+    state = {
+        persons: [
+            {id: 1, name: 'Kolya', age: 35},
+            {id: 2, name: 'Piper', age: 26},
+            {id: 3, name: 'Deacon', age: 34}
+        ],
+        showPersons: false
+    };
+
     constructor(props) {
         super(props);
         console.log('[App.js] Inside Constructor', props);
@@ -18,10 +28,11 @@ class App extends Component {
         console.log('[App.js] Inside componentDidMount()');
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState)
-        return true;
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState)
+    //     return nextState.persons !== this.state.persons ||
+    //         nextState.showPersons !== this.state.showPersons;
+    // }
 
     componentWillUpdate(nextProps, nextState) {
         console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState)
@@ -30,15 +41,6 @@ class App extends Component {
     componentDidUpdate () {
         console.log('[UPDATE App.js] Inside componentDidUpdate()');
     }
-
-    state = {
-        persons: [
-            {id: 1, name: 'Kolya', age: 35},
-            {id: 2, name: 'Piper', age: 26},
-            {id: 3, name: 'Deacon', age: 34}
-        ],
-        showPersons: false
-    };
 
     changeNameHandler = (event, id) => {
         const personIndex = this.state.persons.findIndex(p => {
@@ -100,10 +102,11 @@ class App extends Component {
             <div
                 className="App"
             >
+                <button
+                    onClick={() => {this.setState({showPersons: true})}}
+                >Show Persons</button>
                 <Cockpit
-
                     appTitle={this.props.title}
-
                     persons={this.state.persons}
                     showPersons={this.state.showPersons}
                     style={style}
