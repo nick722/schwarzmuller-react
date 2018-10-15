@@ -31,6 +31,15 @@ class Person extends Component {
                     onChange={change}
                     value={name}
                 />
+                {/*[*/}
+                {/*<p onClick={click}>I'm {name} and I am {age} years old!</p>*/}
+                {/*<p>{children}</p>*/}
+                {/*<input*/}
+                    {/*type="text"*/}
+                    {/*onChange={change}*/}
+                    {/*value={name}*/}
+                {/*/>*/}
+                {/*]*/}
             </div>
         );
     };

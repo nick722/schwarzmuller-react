@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './Cockpit.css';
+import Auxiliary from '../../hoc/Auxiliary';
 
 const Cockpit = ({persons, style, showHidePersons, appTitle}) => {
 
@@ -14,9 +15,8 @@ const Cockpit = ({persons, style, showHidePersons, appTitle}) => {
     }
 
     return (
-        <div
-        >
-            <h1>{ appTitle }</h1>
+        <Auxiliary>
+            <h1>{appTitle}</h1>
             <p
                 className={classes.join(' ')}
             >
@@ -27,7 +27,7 @@ const Cockpit = ({persons, style, showHidePersons, appTitle}) => {
             >
                 Show/Hide Persons
             </button>
-        </div>
+        </Auxiliary>
     );
 };
 
