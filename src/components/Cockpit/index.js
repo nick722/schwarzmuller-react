@@ -3,7 +3,6 @@ import React from 'react';
 import './Cockpit.css';
 
 const Cockpit = ({persons, style, showHidePersons}) => {
-    //showPersons,
 
     const classes = [];
 
@@ -14,12 +13,8 @@ const Cockpit = ({persons, style, showHidePersons}) => {
         classes.push('bold');
     }
 
-    // let btnClass = '';
-    // btnClass = 'red';
-
     return (
         <div
-            // className="Cockpit"
         >
             <h1>Hi, I'm a YN Todo React App</h1>
             <p
