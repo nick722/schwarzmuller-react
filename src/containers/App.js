@@ -73,6 +73,9 @@ class App extends Component {
                 className="App"
             >
                 <Cockpit
+
+                    appTitle={this.props.title}
+
                     persons={this.state.persons}
                     showPersons={this.state.showPersons}
                     style={style}

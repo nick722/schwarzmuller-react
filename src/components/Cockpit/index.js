@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Cockpit.css';
 
-const Cockpit = ({persons, style, showHidePersons}) => {
+const Cockpit = ({persons, style, showHidePersons, appTitle}) => {
 
     const classes = [];
 
@@ -16,7 +16,7 @@ const Cockpit = ({persons, style, showHidePersons}) => {
     return (
         <div
         >
-            <h1>Hi, I'm a YN Todo React App</h1>
+            <h1>{ appTitle }</h1>
             <p
                 className={classes.join(' ')}
             >
