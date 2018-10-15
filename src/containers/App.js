@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import Person from './Person/Person';
+import Persons from '../components/Persons';
+import Cockpit from '../components/Cockpit';
 
 class App extends Component {
     state = {
@@ -58,45 +59,26 @@ class App extends Component {
 
         if (this.state.showPersons) {
             persons = (
-                <div>
-                    {this.state.persons.map((person, index) => (
-                            <Person
-                                click={() => this.deletePersonHandler(index)}
-                            key={person.id}
-                                name={person.name}
-                                age={person.age}
-
-                                change={(event) => this.changeNameHandler(event, person.id)}
-                            />
-                    ))}
-                </div>
+                    <Persons
+                        persons={this.state.persons}
+                        deletePerson={this.deletePersonHandler}
+                        changeName={this.changeNameHandler}
+                    />
             );
             style.backgroundColor = 'red';
-        }
-
-        const classes = [];
-        if (this.state.persons.length <= 2) {
-            classes.push('red');
-        }
-        if (this.state.persons.length <= 1) {
-            classes.push('bold');
         }
 
         return (
             <div
                 className="App"
             >
-                <p
-                    className={classes.join(' ')}
-                >This is really working!</p>
-                <button
+                <Cockpit
+                    persons={this.state.persons}
+                    showPersons={this.state.showPersons}
                     style={style}
-                    onClick={this.showHidePersonsHandler}
-                >Show/Hide Persons
-                </button>
-
+                    showHidePersons={this.showHidePersonsHandler}
+                />
                 {persons}
-
             </div>
         );
     }
