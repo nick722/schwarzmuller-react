@@ -3,7 +3,7 @@ import React from 'react';
 import './Cockpit.css';
 import Auxiliary from '../../hoc/Auxiliary';
 
-const Cockpit = ({persons, style, showHidePersons, appTitle}) => {
+const Cockpit = ({persons, style, showHidePersons, appTitle, login}) => {
 
     const classes = [];
 
@@ -27,6 +27,9 @@ const Cockpit = ({persons, style, showHidePersons, appTitle}) => {
             >
                 Show/Hide Persons
             </button>
+            <button
+                onClick={login}
+            >Log in</button>
         </Auxiliary>
     );
 };

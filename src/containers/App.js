@@ -4,6 +4,8 @@ import './App.css';
 import Persons from '../components/Persons';
 import Cockpit from '../components/Cockpit';
 
+export const AuthContext = React.createContext(false);
+
 class App extends PureComponent {
 
     state = {
@@ -13,7 +15,8 @@ class App extends PureComponent {
             {id: 3, name: 'Deacon', age: 34}
         ],
         showPersons: false,
-        showHidePersonsCounter: 0
+        showHidePersonsCounter: 0,
+        authenticated: false
     };
 
     constructor(props) {
@@ -78,6 +81,10 @@ class App extends PureComponent {
         });
     };
 
+    loginHandler = () => {
+        this.setState({authenticated: true});
+    }
+
     render() {
         console.log('[App.js] Inside render()');
 
@@ -118,8 +125,13 @@ class App extends PureComponent {
                     showPersons={this.state.showPersons}
                     style={style}
                     showHidePersons={this.showHidePersonsHandler}
+                    login={this.loginHandler}
                 />
+                <AuthContext.Provider
+                    value={this.state.authenticated}
+                >
                 {persons}
+                </AuthContext.Provider>
             </div>
         );
     }
