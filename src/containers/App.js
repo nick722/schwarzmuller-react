@@ -12,7 +12,8 @@ class App extends PureComponent {
             {id: 2, name: 'Piper', age: 26},
             {id: 3, name: 'Deacon', age: 34}
         ],
-        showPersons: false
+        showPersons: false,
+        showHidePersonsCounter: 0
     };
 
     constructor(props) {
@@ -35,10 +36,10 @@ class App extends PureComponent {
     // }
 
     componentWillUpdate(nextProps, nextState) {
-        console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState)
+        console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
     }
 
-    componentDidUpdate () {
+    componentDidUpdate() {
         console.log('[UPDATE App.js] Inside componentDidUpdate()');
     }
 
@@ -69,8 +70,11 @@ class App extends PureComponent {
     };
 
     showHidePersonsHandler = () => {
-        this.setState({
-            showPersons: !this.state.showPersons
+        this.setState((prevState, props) => {
+            return {
+                showPersons: !prevState.showPersons,
+                showHidePersonsCounter: prevState.showHidePersonsCounter + 1
+            };
         });
     };
 
@@ -89,11 +93,11 @@ class App extends PureComponent {
 
         if (this.state.showPersons) {
             persons = (
-                    <Persons
-                        persons={this.state.persons}
-                        deletePerson={this.deletePersonHandler}
-                        changeName={this.changeNameHandler}
-                    />
+                <Persons
+                    persons={this.state.persons}
+                    deletePerson={this.deletePersonHandler}
+                    changeName={this.changeNameHandler}
+                />
             );
             style.backgroundColor = 'red';
         }
@@ -103,8 +107,11 @@ class App extends PureComponent {
                 className="App"
             >
                 <button
-                    onClick={() => {this.setState({showPersons: true})}}
-                >Show Persons</button>
+                    onClick={() => {
+                        this.setState({showPersons: true});
+                    }}
+                >Show Persons
+                </button>
                 <Cockpit
                     appTitle={this.props.title}
                     persons={this.state.persons}
