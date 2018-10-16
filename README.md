@@ -1,1 +1,1 @@
-096 A Different Approach to HOCs
+105 Wrap Up 07 Diving Deeper into Components  React Internals
