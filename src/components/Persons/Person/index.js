@@ -15,6 +15,9 @@ class Person extends Component {
 
     componentDidMount() {
         console.log('[Person.js] Inside componentDidMount()');
+        if (this.props.position === 0) {
+            this.inputElement.focus();
+        }
     }
 
     render() {
@@ -28,6 +31,9 @@ class Person extends Component {
                 <p onClick={click}>I'm {name} and I am {age} years old!</p>
                 <p>{children}</p>
                 <input
+                    ref={(input) => {
+                        this.inputElement = input;
+                    }}
                     type="text"
                     onChange={change}
                     value={name}
@@ -42,6 +48,6 @@ Person.propTypes = {
     click: PropTypes.func,
     age: PropTypes.number.isRequired,
     change: PropTypes.func
-}
+};
 
 export default Person;

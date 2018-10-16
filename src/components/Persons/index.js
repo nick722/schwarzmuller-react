@@ -44,6 +44,7 @@ class Persons extends PureComponent {
             <Person
                 click={() => deletePerson(index)}
                 key={person.id}
+                position={index}
                 name={person.name}
                 age={person.age}
                 change={(event) => changeName(event, person.id)}
