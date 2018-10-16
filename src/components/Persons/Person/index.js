@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './Person.css';
 
@@ -34,6 +35,13 @@ class Person extends Component {
             </div>
         );
     };
+}
+
+Person.propTypes = {
+    name: PropTypes.string.isRequired,
+    click: PropTypes.func,
+    age: PropTypes.number.isRequired,
+    change: PropTypes.func
 }
 
 export default Person;
