@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = () => <div>Burger Builder</div>
+class App extends Component {
+    render() {
+        return (
+            <div>
+                Burger Builder
+            </div>
+        );
+    }
+}
 
 export default App;
