@@ -10,13 +10,15 @@ const controls = [
     { labeL: 'Meat', type: 'meat' },
 ];
 
-const BuildControls = ({ ingredientAdd }) => (
+const BuildControls = ({ ingredientAdd, ingredientRemove, disabled }) => (
     <div className={classes.BuildControls}>
         {controls.map(ctrl => (
             <BuildControl
                 key={ctrl.label}
                 label={ctrl.label}
                 add={() => ingredientAdd(ctrl.type)}
+                remove={() => ingredientRemove(ctrl.type)}
+                disabled={disabled[ctrl.type]}
             />
         ))}
     </div>
