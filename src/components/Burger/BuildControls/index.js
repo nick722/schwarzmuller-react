@@ -4,13 +4,13 @@ import classes from './BuildControls.css';
 import BuildControl from './BuildControl';
 
 const controls = [
-    { labeL: 'Salad', type: 'salad' },
-    { labeL: 'Bacon', type: 'bacon' },
-    { labeL: 'Cheese', type: 'cheese' },
-    { labeL: 'Meat', type: 'meat' },
+    { label: 'Salad', type: 'salad' },
+    { label: 'Bacon', type: 'bacon' },
+    { label: 'Cheese', type: 'cheese' },
+    { label: 'Meat', type: 'meat' },
 ];
 
-const BuildControls = ({ ingredientAdd, ingredientRemove, disabled, price }) => (
+const BuildControls = ({ ingredientAdd, ingredientRemove, disabled, price, purchasable }) => (
     <div className={classes.BuildControls}>
         <p>Current Price: <strong>{price.toFixed(2)}</strong></p>
         {controls.map(ctrl => (
@@ -22,6 +22,10 @@ const BuildControls = ({ ingredientAdd, ingredientRemove, disabled, price }) => 
                 disabled={disabled[ctrl.type]}
             />
         ))}
+        <button
+            className={classes.OrderButton}
+            disabled={!purchasable}
+        > ORDER NOW</button>
     </div>
 );
 
