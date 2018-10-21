@@ -4,10 +4,12 @@ import classes from './DrawerToggle.css';
 
 const DrawerToggle = ({ click }) => (
     <div
-        className={classes.Menu}
+        className={classes.DrawerToggle}
         onClick={click}
     >
-        MENU
+       <div></div>
+       <div></div>
+       <div></div>
     </div>
 );
 
