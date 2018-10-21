@@ -3,10 +3,13 @@ import React from 'react';
 import classes from './Toolbar.css';
 import Logo from '../../Logo';
 import NavigationItems from '../NavigationItems';
+import Menu from '../../UI/Menu';
 
-const Toolbar = () => (
+const Toolbar = ({openSideDrawer}) => (
     <header className={classes.Toolbar}>
-        <div>MENU</div>
+        <Menu
+            openSideDrawer={openSideDrawer}
+        />
         <div className={classes.Logo}>
             <Logo/>
         </div>
