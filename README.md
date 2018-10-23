@@ -8,3 +8,6 @@ https://firebase.google.com/
 Firebase gives you functionality like analytics, databases, messaging
 and crash reporting so you can move quickly and focus on your users.
 
+CSS Spinners
+------------
+https://projects.lukehaas.me/css-loaders/
