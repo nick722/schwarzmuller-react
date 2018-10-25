@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axious from 'axios';
+import axios from 'axios';
 
 import './FullPost.css';
 
@@ -22,7 +22,7 @@ class FullPost extends Component {
             if (!this.state.loadedPost
                 || this.state.loadedPost
                 && this.state.loadedPost.id !== +this.props.match.params.id) {
-            axious.get('http://jsonplaceholder.typicode.com/posts/'
+            axios.get('http://jsonplaceholder.typicode.com/posts/'
                 + this.props.match.params.id)
                 .then(response => {
                     this.setState({loadedPost: response.data})
