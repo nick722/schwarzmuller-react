@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import BurgerBuilder from './containers/BurgerBuilder';
-
 import Layout from './hoc/Layout';
+import BurgerBuilder from './containers/BurgerBuilder';
+import Checkout from './containers/Checkout';
 
 class App extends Component {
 
@@ -11,6 +11,7 @@ class App extends Component {
             <div>
                 <Layout>
                     <BurgerBuilder/>
+                    <Checkout />
                 </Layout>
             </div>
         );
