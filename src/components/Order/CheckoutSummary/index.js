@@ -15,7 +15,7 @@ const CheckoutSummary = ({ ingredients }) => (
         >
             CANCEL</Button>
         <Button
-            btnType="Continue"
+            btnType="Success"
         >
             CONTINUE</Button>
     </div>
