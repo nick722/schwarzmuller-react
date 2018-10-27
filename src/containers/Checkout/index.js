@@ -30,7 +30,7 @@ class Checkout extends Component {
   };
 
   checkoutContinueHandler = () => {
-    this.props.history.replace('/checkout/contact-data');
+      this.props.history.replace('/checkout/contact-data');
   };
 
   render() {
@@ -43,7 +43,7 @@ class Checkout extends Component {
         />
         {/*<ContactData/>*/}
         <Route
-          path={this.props.match.path + '/contact.data'}
+          path={this.props.match.path + '/contact-data'}
           component={ContactData}
         />
       </div>

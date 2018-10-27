@@ -12,7 +12,7 @@ class ContactData extends Component {
             street: '',
             postalCode: ''
         }
-    }
+    };
 
     render() {
         return (
