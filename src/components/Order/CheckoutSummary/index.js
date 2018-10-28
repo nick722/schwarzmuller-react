@@ -19,7 +19,7 @@ const CheckoutSummary = ({ ingredients, checkoutCancel, checkoutContinue }) => (
             btnType="Success"
             click={ checkoutContinue }
         >
-            CONTINUE!</Button>
+            CONTINUE</Button>
     </div>
 );
 
