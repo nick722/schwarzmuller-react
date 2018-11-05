@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import Blog from './containers/Blog/Blog';
+import Blog from "./containers/Blog/Blog";
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       //<BrowserRouter basename="/my-app">
       <BrowserRouter>
         <div className="App">
-          <Blog/>
+          <Blog />
         </div>
       </BrowserRouter>
     );
