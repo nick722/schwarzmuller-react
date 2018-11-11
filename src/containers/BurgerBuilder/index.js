@@ -13,22 +13,11 @@ import * as burgerBuilderActions from "../../store/actions/";
 
 class BurgerBuilder extends Component {
   state = {
-    purchasing: false,
-    loading: false,
-    error: false
+    purchasing: false
   };
 
   componentDidMount() {
     console.log(this.props);
-
-    axios
-      .get("https://yn-react-burger.firebaseio.com/ingredients.json")
-      .then(response => {
-        this.setState({ ingredients: response.data });
-      })
-      .catch(error => {
-        this.setState({ error: true });
-      });
   }
 
   updatePurchaseState(ingredients) {
