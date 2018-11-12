@@ -12,4 +12,4 @@ CSS Spinners
 ------------
 https://projects.lukehaas.me/css-loaders/
 
-t1811091107
+continue 301 Checking our Implemented Functionalities
