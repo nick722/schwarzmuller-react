@@ -12,3 +12,5 @@ CSS Spinners
 ------------
 https://projects.lukehaas.me/css-loaders/
 
+Firebase Auth REST API
+https://firebase.google.com/docs/reference/rest/auth/#section-create-email-password
