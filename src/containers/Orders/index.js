@@ -28,6 +28,7 @@ class Orders extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log("state>>>", state);
   return {
     orders: state.order.orders,
     loading: state.order.loading,
