@@ -3,7 +3,7 @@ import { updateObject } from "../utility";
 
 const initialState = {
   token: null,
-  iserId: null,
+  userId: null,
   error: null,
   loading: false
 };
