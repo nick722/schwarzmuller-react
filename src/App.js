@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import BurgerBuilder from "./containers/BurgerBuilder";
+import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
 
 import Layout from "./hoc/Layout";
 
