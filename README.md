@@ -25,3 +25,7 @@ FIREBASE RULES FOR WHEN AUTHENTICATION IMPLEMENTED
       }
   }
 }
+----------------
+
+169 SPINNERS
+https://projects.lukehaas.me/css-loaders/
