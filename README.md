@@ -8,3 +8,20 @@ https://firebase.google.com/
 Firebase gives you functionality like analytics, databases, messaging
 and crash reporting so you can move quickly and focus on your users.
 
+-----------
+
+FIREBASE RULES FOR WHEN AUTHENTICATION IMPLEMENTED
+
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    "ingredients": {
+      ".read": "true",
+    	".write": "true",
+    },
+      "orders": {
+        ".read": "auth !=null",
+        ".write": "auth !=null"
+      }
+  }
+}
