@@ -5,23 +5,29 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    persons: [
-      {
-        name: "Nick",
-        age: 36
-      },
-      { name: "Piper", age: 29 }
-    ],
+    persons: [{ name: "Nick", age: 36 }, { name: "Piper", age: 29 }],
     otherState: "some other state"
   };
 
   switchNameHandler = newName => {
-    // this.state.persons[0].name = "Nikolai";
     this.setState({
       ...this.state,
       persons: [
         {
           name: newName,
+          age: 36
+        },
+        { name: "Piper", age: 28 }
+      ]
+    });
+  };
+
+  nameChangeHandler = event => {
+    this.setState({
+      ...this.state,
+      persons: [
+        {
+          name: event.target.value,
           age: 36
         },
         { name: "Piper", age: 28 }
@@ -36,6 +42,7 @@ class App extends Component {
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
           click={this.switchNameHandler.bind(this, "Bind")}
+          changed={this.nameChangeHandler}
         />
         <Person
           name={this.state.persons[1].name}
