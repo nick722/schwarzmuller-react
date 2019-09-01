@@ -1,17 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import './Person.css';
-
-const Person = ({name, age, children, click, changeName}) => (
-    <div className="Person">
-        <p onClick={click}>I'm {name} and I am {age} years old!</p>
-        <p>{children}</p>
-        <input
-            type="text"
-            onChange={changeName}
-            value={name}
-        />
+const Person = ({ name, age, click }) => {
+  return (
+    <div>
+      <p onClick={click}>
+        I'm {name} and I'm {age} year old!
+      </p>
     </div>
-)
+  );
+};
 
 export default Person;

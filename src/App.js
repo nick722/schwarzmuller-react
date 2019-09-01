@@ -1,79 +1,51 @@
-import React, {Component} from 'react';
-import './App.css';
-import Person from './Person/Person';
+import React, { Component } from "react";
+import Person from "./Person/Person";
+
+import "./App.css";
 
 class App extends Component {
-    state = {
-        persons: [
-            {name: 'Kolya', age: 35},
-            {name: 'Piper', age: 26},
-            {name: 'Deacon', age: 34}
-        ],
-        showPersons: false
-    };
+  state = {
+    persons: [
+      {
+        name: "Nick",
+        age: 36
+      },
+      { name: "Piper", age: 29 }
+    ],
+    otherState: "some other state"
+  };
 
-    switchNameHandler = (newName) => {
-        this.setState({
-            persons: [
-                {name: newName, age: 35},
-                {name: 'Piper', age: 26},
-                {name: 'Deacon', age: 34}
-            ]
-        });
-    };
+  switchNameHandler = newName => {
+    // this.state.persons[0].name = "Nikolai";
+    this.setState({
+      ...this.state,
+      persons: [
+        {
+          name: newName,
+          age: 36
+        },
+        { name: "Piper", age: 28 }
+      ]
+    });
+  };
 
-    changeNameHandler = (event) => {
-        this.setState({
-            persons: [
-                {name: event.target.value, age: 35},
-                {name: 'Piper', age: 26},
-                {name: 'Deacon', age: 34}
-            ]
-        });
-    };
-
-    showHidePersonsHandler = () => {
-        this.setState({
-            showPersons: !this.state.showPersons
-        });
-    };
-
-    render() {
-        const style = {
-            backgroundColor: 'lime',
-            border: '1px solid green',
-            padding: '8px',
-            cursor: 'pointer'
-        };
-
-        let persons = null;
-
-        if (this.state.showPersons) {
-            persons = (
-                <div>
-                    {this.state.persons.map((person) => (
-                        <Person
-                            name={person.name}
-                            age={person.age}
-                        />
-                    ))}
-                </div>
-            );
-        }
-
-        return (
-            <div>
-                <button
-                    style={style}
-                    onClick={this.showHidePersonsHandler}
-                >Show/Hide Persons
-                </button>
-
-                {persons}
-
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+          click={this.switchNameHandler.bind(this, "Bind")}
+        />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+          click={() => this.switchNameHandler("Arrow")}
+        />
+        <button onClick={this.switchNameHandler}>Switch name</button>
+      </div>
+    );
+  }
 }
 
 export default App;
