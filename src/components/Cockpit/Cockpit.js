@@ -2,7 +2,7 @@ import React from "react";
 import classes from "../../containers/App.css";
 import "./Cockpit.css";
 
-const Cockpit = ({ clicked, persons, showPersons, style }) => {
+const Cockpit = ({ clicked, persons, showPersons, style, title }) => {
   const assignedClasses = [];
   let btnClass = "";
   if (showPersons) btnClass = "Red";
@@ -15,7 +15,7 @@ const Cockpit = ({ clicked, persons, showPersons, style }) => {
 
   return (
     <div className="Cockpit">
-      <h1>Hi, I'm a React App</h1>
+      <h1>{title}</h1>
       <p className={assignedClasses.join(" ")}>This is really working!</p>
       <button style={style} onClick={clicked}>
         Show/Hide Persons
