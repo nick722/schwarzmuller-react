@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import classes from "./App.css";
 import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 class App extends Component {
   state = {
@@ -57,31 +58,22 @@ class App extends Component {
 
     if (this.state.showPersons) {
       persons = (
-        <div>
-          <Persons
-            deletePerson={this.deletePersonHandler}
-            persons={this.state.persons}
-          />
-        </div>
+        <Persons
+          changed={e => this.changeNameHandler(e)}
+          clicked={this.deletePersonHandler}
+          persons={this.state.persons}
+        />
       );
-      style.backgroundColor = "red";
-    }
-
-    const assignedClasses = [];
-    if (this.state.persons.length <= 2) {
-      assignedClasses.push(classes.red);
-    }
-    if (this.state.persons.length <= 1) {
-      assignedClasses.push(classes.bold);
     }
 
     return (
       <div className={classes.App}>
-        <p className={assignedClasses.join(" ")}>This is really working!</p>
-        <button style={style} onClick={this.showHidePersonsHandler}>
-          Show/Hide Persons
-        </button>
-
+        <Cockpit
+          clicked={this.showHidePersonsHandler}
+          persons={this.state.persons}
+          showPersons={this.state.showPersons}
+          style={style}
+        />
         {persons}
       </div>
     );
