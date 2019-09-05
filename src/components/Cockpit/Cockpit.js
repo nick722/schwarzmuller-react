@@ -5,7 +5,11 @@ import "./Cockpit.css";
 const Cockpit = ({ clicked, persons, showPersons, style, title }) => {
   useEffect(() => {
     console.log("[Cockpit.js] useEffect");
-  });
+    //Http request...
+    setTimeout(() => {
+      alert("Saved data to the cloud!!");
+    }, 1000);
+  }, []);
 
   const assignedClasses = [];
   let btnClass = "";
