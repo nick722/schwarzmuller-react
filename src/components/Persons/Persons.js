@@ -22,6 +22,10 @@ class Persons extends Component {
     console.log("snapshot:", snapshot);
   }
 
+  componentWillUnmount() {
+    console.log("[Persons.js] componentWillUnmount");
+  }
+
   render() {
     const { changed, clicked, persons } = this.props;
     console.log("[Persons.js] rendering...");
