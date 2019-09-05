@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classes from "../../containers/App.css";
 import "./Cockpit.css";
 
 const Cockpit = ({ clicked, persons, showPersons, style, title }) => {
+  useEffect(() => {
+    console.log("[Cockpit.js] useEffect");
+  });
+
   const assignedClasses = [];
   let btnClass = "";
   if (showPersons) btnClass = "Red";
